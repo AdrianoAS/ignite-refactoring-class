@@ -10,7 +10,9 @@ interface IInputProps {
   Icon?: IconType;
 }
 
-const Input = ({ name, Icon, ...rest }: IInputProps) => {
+type InputProps = JSX.IntrinsicElements["input"] & IInputProps;
+
+const Input = ({ name, Icon, ...rest }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
